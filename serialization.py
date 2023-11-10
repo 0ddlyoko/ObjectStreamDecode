@@ -608,7 +608,7 @@ def decode_object(handler: Handler):
     if tc == Constants.TC_LONGSTRING:
         new_long_string = LongString()
         new_long_string.decode(handler)
-        handler.add_reference(new_long_string.content)
+        handler.add_reference(new_long_string)
         return new_long_string
     if tc == Constants.TC_NULL:
         return Null()
@@ -625,6 +625,6 @@ def decode_object(handler: Handler):
     if tc == Constants.TC_STRING:
         new_string = String()
         new_string.decode(handler)
-        handler.add_reference(new_string.content)
+        handler.add_reference(new_string)
         return new_string
     pass
